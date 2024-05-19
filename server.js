@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const productRoutes = require('./routes/productRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/api', productRoutes);
+app.use('/api', orderRoutes);
 
 // MongoDB connection
 const mongoURI = process.env.MONGO_URI;
